@@ -1,9 +1,9 @@
 function getWeather(cityID) {
 	let key = "";
 	fetch(
-		"https://api.openweathermap.org/data/2.5/weather?id" +
+		"https://api.openweathermap.org/data/2.5/weather?id=" +
 		cityID +
-		"&appID" +
+		"&appID=" +
 		key,
 	)
 		.then(function(resp) {
@@ -21,7 +21,7 @@ function writeWeather(data) {
 	document.getElementById("description").innerHTML =
 		data.weather[0].description;
 	document.getElementById("degree").innerHTML = celcius + "&deg;";
-	document.getElementById("country").innerHTML = data.name;
+	document.getElementById("location").innerHTML = data.name;
 }
 
 window.onload = function() {
